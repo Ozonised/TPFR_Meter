@@ -3,6 +3,7 @@
 #include <Arduino.h>
 #include <avr/pgmspace.h>
 #include <LiquidCrystal.h>
+#include "home.h"
 #include "switches.h"
 #include "modes.h"
 
@@ -26,11 +27,5 @@ extern uint8_t updateLCD;
 extern uint8_t curPos;
 extern char lcdStr[15];
 
-extern uint8_t current_PWM_Range;
-extern PWM_Freq_Range const pwmFreq[];
-extern PGM_P const pwmRangeMenu[];
-
 extern void (*currentMode)(void);
-void home();
 void PWM_Range_Select();
-void pwm();

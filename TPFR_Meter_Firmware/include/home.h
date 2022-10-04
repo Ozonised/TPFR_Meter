@@ -2,17 +2,17 @@
 
 #include <Arduino.h>
 #include <LiquidCrystal.h>
-#include <OneWire.h>
-#include <DallasTemperature.h>
-#include "home.h"
+#include <avr/pgmspace.h>
 #include "switches.h"
-#include "modes.h"
+#include "pwm.h"
+#include "temperature.h"
 
 extern LiquidCrystal lcd;
-extern uint8_t updateLCD;
 extern uint8_t curPos;
-
-extern unsigned long currentMillis;
-
+extern uint8_t updateLCD;
+extern char lcdStr[15];
 extern void (*currentMode)(void);
-void temp();
+
+void freq();
+void rpm();
+void home();

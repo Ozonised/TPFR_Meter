@@ -2,12 +2,12 @@
 
 int32_t cpuClkOffset = 0;
 
-uint8_t current_PWM_Range;
-uint16_t increment_step;
-uint32_t currentMinFreq;
-uint32_t current_PWM_Freq;
-uint32_t currentMaxFreq;
-uint32_t PWM_Duty_Cycle;
+static uint8_t current_PWM_Range;
+static uint16_t increment_step;
+static uint32_t currentMinFreq;
+static uint32_t current_PWM_Freq;
+static uint32_t currentMaxFreq;
+static uint32_t PWM_Duty_Cycle;
 
 PWM_Freq_Range const pwmFreq[4] PROGMEM = {
     {31, 1000, 1},
@@ -22,6 +22,7 @@ static const char PWM_R3[] PROGMEM = " 40kHz - 100kHz";
 
 PGM_P const pwmRangeMenu[] PROGMEM = {PWM_R0, PWM_R1, PWM_R2, PWM_R3};
 
+void pwm();
 static void set_PWM_Freq(uint32_t freq, uint32_t dutyCycle, uint8_t range);
 static void set_PWM_DutyCycle(uint32_t dutyCycle);
 

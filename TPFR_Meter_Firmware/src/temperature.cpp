@@ -1,8 +1,8 @@
 #include "temperature.h"
 
-const uint8_t DS18B20_PIN = 11;
-uint8_t ds18b20_Init_Flag = 1;
-float c_temp, f_temp;
+static const uint8_t DS18B20_PIN = 11;
+static uint8_t ds18b20_Init_Flag = 1;
+static float c_temp, f_temp;
 static unsigned long prevTempReadTime;
 static const uint16_t TEMP_READ_INTERVAL = 1000;
 
