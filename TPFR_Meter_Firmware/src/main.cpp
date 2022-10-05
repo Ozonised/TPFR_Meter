@@ -6,7 +6,8 @@
 #include "home.h"
 #include "pwm.h"
 #include "temperature.h"
-
+#include "freqCounter.h"
+#include "rpm.h"
 
 unsigned long currentMillis;
 unsigned long prevSwtReadTime;
@@ -62,16 +63,6 @@ void loop()
   currentMode();
 }
 
-
-void rpm()
-{
-
-}
-
-void freq()
-{
-
-}
 // void printMenu(PGM_P const *str)
 // {
 //   lcd.clear();

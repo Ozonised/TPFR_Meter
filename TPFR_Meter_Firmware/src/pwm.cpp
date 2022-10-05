@@ -52,7 +52,7 @@ void set_PWM_Freq(uint32_t freq, uint32_t dutyCycle, uint8_t range)
 
     temp_ICR1 = ((F_CPU / prescaler) / freq) - 1;
 
-    // update ICR1 only if the frequency has changed
+    // update the frequency only if ICR1 has changed
     // temp_ICR1 will not be equal to ICR1 if the frequency has changed
     if (temp_ICR1 != ICR1)
     {
@@ -124,7 +124,6 @@ void PWM_Range_Select()
 
     if (switches.backPressed)
     {
-        bitClear(DDRB, PWM_PIN); // disable PWM output
         currentMode = home;
         curPos = PWM_RANGE - 1; // cursor at row one
         updateLCD = 1;
@@ -243,6 +242,13 @@ void pwm()
     if (switches.backPressed)
     {
         bitClear(DDRB, PWM_PIN); // disable PWM output
+
+        // reset timer1's registers
+        TCNT1 = 0;
+        ICR1 = 0;
+        TCCR1B = 0;
+        TCCR1A = 0;
+
         setFreq = 0;
         setDuty = 0;
         pwmCur = 0;
