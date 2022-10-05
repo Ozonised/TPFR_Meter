@@ -1,11 +1,11 @@
 #include <Arduino.h>
+#include <LiquidCrystal.h>
 #include <avr/pgmspace.h>
 #include "switches.h"
 #include "modes.h"
 #include "home.h"
 #include "pwm.h"
 #include "temperature.h"
-#include <LiquidCrystal.h>
 
 
 unsigned long currentMillis;
