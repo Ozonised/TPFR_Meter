@@ -8,6 +8,7 @@ static uint32_t currentMinFreq;
 static uint32_t current_PWM_Freq;
 static uint32_t currentMaxFreq;
 static uint32_t PWM_Duty_Cycle;
+static uint32_t prevIncrementTime;
 
 PWM_Freq_Range const pwmFreq[4] PROGMEM = {
     {31, 1000, 1},
@@ -136,6 +137,7 @@ void pwm()
     static bool setDuty = 0;
     static uint8_t pwmCur = 0;
 
+    // increment or decrement pwmCur only when we are not in setFreq or setDuty mode
     if (!setFreq && !setDuty)
     {
         // decrement pwmCur only when it's greater than zero
@@ -169,11 +171,33 @@ void pwm()
 
     if (setFreq)
     {
-        if (switches.upPressed && current_PWM_Freq < currentMaxFreq)
-            current_PWM_Freq += increment_step;
+        if (current_PWM_Freq < currentMaxFreq)
+        {
+            if (switches.upPressed)
+                current_PWM_Freq += increment_step;
 
-        if (switches.downPressed && current_PWM_Freq > currentMinFreq)
-            current_PWM_Freq -= increment_step;
+            // for long button press increment the current_PWM_Freq every 50ms
+            if (switches.upLongPressed && (currentMillis - prevIncrementTime) >= 50)
+            {
+                current_PWM_Freq += increment_step;
+                prevIncrementTime = currentMillis;
+                updateLCD = 1;
+            }
+        }
+
+        if (current_PWM_Freq > currentMinFreq)
+        {
+            if (switches.downPressed)
+                current_PWM_Freq -= increment_step;
+
+            // for long button press decrement the current_PWM_Freq every 50ms
+            if (switches.downLongPressed && (currentMillis - prevIncrementTime) >= 50)
+            {
+                current_PWM_Freq -= increment_step;
+                prevIncrementTime = currentMillis;
+                updateLCD = 1;
+            }
+        }
 
         set_PWM_Freq(current_PWM_Freq, PWM_Duty_Cycle, current_PWM_Range);
     }
@@ -182,6 +206,21 @@ void pwm()
     {
         PWM_Duty_Cycle += switches.upPressed && PWM_Duty_Cycle < 100;
         PWM_Duty_Cycle -= switches.downPressed && PWM_Duty_Cycle;
+
+        if (switches.upLongPressed && (currentMillis - prevIncrementTime) >= 50)
+        {
+            PWM_Duty_Cycle += PWM_Duty_Cycle < 100;
+            prevIncrementTime = currentMillis;
+            updateLCD = 1;
+        }
+
+        if (switches.downLongPressed && (currentMillis - prevIncrementTime) >= 50)
+        {
+            PWM_Duty_Cycle -= PWM_Duty_Cycle > 0;
+            prevIncrementTime = currentMillis;
+            updateLCD = 1;
+        }
+
         set_PWM_DutyCycle(PWM_Duty_Cycle);
     }
 
