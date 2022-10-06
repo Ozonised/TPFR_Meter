@@ -7,7 +7,7 @@
 #include "pwm.h"
 #include "temperature.h"
 #include "rpm.h"
-#include <freqCounter.h>
+#include "freqCounter.h"
 
 extern LiquidCrystal lcd;
 extern uint8_t curPos;

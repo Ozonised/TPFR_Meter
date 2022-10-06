@@ -8,12 +8,10 @@
 #define DOWN PC2
 #define ENTER PC3
 
-// value on PORTC when the specified button is pressed
-
-extern const uint8_t IS_BACK;          // value on PORTC when the back button is pressed
-extern const uint8_t IS_UP;            // value on PORTC when the up button is pressed
-extern const uint8_t IS_DOWN;          // value on PORTC when the down button is pressed
-extern const uint8_t IS_ENTER;         // value on PORTC when the enter button is pressed
+extern const uint8_t IS_BACK;
+extern const uint8_t IS_UP;  
+extern const uint8_t IS_DOWN; 
+extern const uint8_t IS_ENTER;
 
 struct ButtonState
 {
@@ -26,6 +24,9 @@ struct ButtonState
     uint8_t downLongPressed : 1;
 
     uint8_t res : 2;
+
+    uint8_t upPressCount;
+    uint8_t downPressCount;
 };
 
 extern ButtonState switches;
