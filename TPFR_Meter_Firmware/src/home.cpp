@@ -59,7 +59,7 @@ void home()
             break;
 
         case 3:
-            currentMode = freq;
+            currentMode = freqCounter;
             break;
 
         case 4:

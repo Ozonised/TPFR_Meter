@@ -1,9 +1,7 @@
 #pragma once
 
-#include <Arduino.h>
-#include <LiquidCrystal.h>
-#include <avr/pgmspace.h>
-#include "switches.h"
+#include "common.h"
+
 #include "pwm.h"
 #include "temperature.h"
 #include "rpm.h"

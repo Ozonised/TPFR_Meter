@@ -1,5 +1,5 @@
 #pragma once 
 
-#include <Arduino.h>
+#include "common.h"
 
-void freq();
+void freqCounter();

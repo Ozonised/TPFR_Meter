@@ -16,7 +16,7 @@ uint8_t curntSwtState, prevSwtState;
 
 uint8_t curPos;
 
-const uint8_t E = 2, RS = 3, D4 = 4, D5 = 5, D6 = 6, D7 = 7;
+const uint8_t E = 2, RS = 3, D4 = 4, D5 = 12, D6 = 6, D7 = 7;
 LiquidCrystal lcd(RS, E, D4, D5, D6, D7);
 
 void (*currentMode)(void);
@@ -42,12 +42,12 @@ void loop()
 
     // checking for long button presses
     // switch states are checked every 15ms
-    // a long press has occured if the switch has been pressed for more than 225 ms
+    // a long press has occured if the switch has been pressed for more than 495 ms
 
     // if the switch is currently pressed and was previously pressed as well and it has not been a long press
     if (curntSwtState == IS_UP && !bitRead(prevSwtState, UP) && !switches.upLongPressed)
     {
-      switches.upLongPressed = ++switches.upPressCount >= 33; // ">= 33" because 33 * SWT_READ_INTERVAL = 500ms
+      switches.upLongPressed = ++switches.upPressCount >= 33; // ">= 33" because 33 * SWT_READ_INTERVAL = 495ms
     }
     // switch is not pressed
     else if (curntSwtState != IS_UP)
@@ -58,7 +58,7 @@ void loop()
 
     if (curntSwtState == IS_DOWN && !bitRead(prevSwtState, DOWN) && !switches.downLongPressed)
     {
-      switches.downLongPressed = ++switches.downPressCount >= 15;
+      switches.downLongPressed = ++switches.downPressCount >= 33;
     }
     else if (curntSwtState != IS_DOWN)
     {

@@ -1,11 +1,6 @@
 #pragma once
 
-#include <Arduino.h>
-#include <avr/pgmspace.h>
-#include <LiquidCrystal.h>
-#include "home.h"
-#include "switches.h"
-#include "modes.h"
+#include "common.h"
 
 /// @brief Minimun and maximum PWM frequency in the selected range
 struct PWM_Freq_Range
@@ -22,10 +17,4 @@ struct PWM_Freq_Range
 #define R2 2
 #define R3 3
 
-extern LiquidCrystal lcd;
-extern uint8_t updateLCD;
-extern uint8_t curPos;
-extern char lcdStr[15];
-
-extern void (*currentMode)(void);
 void PWM_Range_Select();

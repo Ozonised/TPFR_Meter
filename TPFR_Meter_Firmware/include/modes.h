@@ -7,6 +7,6 @@ enum Modes
     HOME,
     TEMP,
     PWM_RANGE,
-    FREQ,
+    FREQ_COUNTER,
     RPM
 };
