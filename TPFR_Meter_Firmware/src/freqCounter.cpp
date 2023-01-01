@@ -2,10 +2,10 @@
 
 static uint8_t gateTime = 100, freq_is_under_1KHz = 0;
 const unsigned short lcdUpdateInterval = 500;
-static volatile uint32_t ICR_Val[2];
+volatile uint32_t ICR_Val[2];
 volatile uint8_t input_capt_count = 0, timer1_ovf_count = 0;
-static uint32_t pulseCount, frequency, lastLcdUpdateTIme;
-
+static uint32_t pulseCount, frequency;
+uint32_t lastLcdUpdateTIme;
 
 void freqCounter()
 {
@@ -95,6 +95,7 @@ void freqCounter()
         TCCR1A = 0;
         TCCR1B = 0;
         TCCR1C = 0;
+        TIMSK1 = 0;
         curPos = FREQ_COUNTER - 1;
         updateLCD = 1;
         currentMode = home;
