@@ -3,7 +3,7 @@
 static uint8_t gateTime = 100, freq_is_under_1KHz = 0;
 const unsigned short lcdUpdateInterval = 500;
 static volatile uint32_t ICR_Val[2];
-static volatile uint8_t input_capt_count = 0, timer1_ovf_count = 0;
+volatile uint8_t input_capt_count = 0, timer1_ovf_count = 0;
 static uint32_t pulseCount, frequency, lastLcdUpdateTIme;
 
 
@@ -20,7 +20,7 @@ void freqCounter()
     {
 
         uint32_t start = micros();
-        TCCR1C = (1 << TOV1);
+        TIMSK1 = (1 << TOV1);
         // clock source on T1 pin clock on rising edge
         TCCR1B = _BV(CS10) | _BV(CS11) | _BV(CS12);
         TCNT1 = 0;
@@ -45,7 +45,7 @@ void freqCounter()
         // trigger on positive edge and prescaler of 64
         // timer clock of 250KHz and a period of 4uS
         TCCR1B = (1 << ICES1) | (1 << CS11) | (1 << CS10);
-        TIMSK1 = (1 << ICIE1);
+        TIMSK1 = (1 << ICIE1) | (1 << TOV1);
 
         if (input_capt_count == 2)
         {
@@ -53,17 +53,21 @@ void freqCounter()
             {
                 pulseCount = ICR_Val[1] - ICR_Val[0];
             }
+
+            // timer counter has overflown
             if (ICR_Val[0] > ICR_Val[1])
             {
-                pulseCount = (65535U - ICR_Val[0]) + ICR_Val[1];
+                // (timer1_ovf_count - 1) to ignore the first overflow
+                pulseCount = (65535UL - ICR_Val[0]) + (timer1_ovf_count - 1) * 65535UL + ICR_Val[1];
             }
 
             // timer has a clock of 250KHz and a period of 4uS
             // therefore pulse count must be multiplied by 4 to get the period of the input signal
             pulseCount *= 4;
-            frequency = 1000000U / pulseCount;
+            frequency = 1000000UL / pulseCount;
             frequency += 1; // "+ 1" for calibration
             input_capt_count = 0;
+            timer1_ovf_count = 0;
             updateLCD = 1;
         }
     }
@@ -106,6 +110,8 @@ ISR(TIMER1_CAPT_vect)
 {
     ICR_Val[input_capt_count] = ICR1;
     if (input_capt_count)
-        bitClear(TIMSK1, ICIE1);
+    {
+        TIMSK1 &= ~(_BV(TOV1) | _BV(ICIE1));
+    }
     input_capt_count++;
 }
