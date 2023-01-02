@@ -1,7 +1,6 @@
 #include "rpm.h"
-static uint32_t pulseCount = 0, rotationPerMinute = 0;
-static float rotationPerSecond = 0;
-
+static uint32_t pulseCount = 0;
+static float rotationPerSecond = 0, rotationPerMinute = 0;
 
 void rpm()
 {
@@ -28,10 +27,10 @@ void rpm()
         // timer has a clock of 250KHz and a period of 4uS
         // therefore pulse count must be multiplied by 4 to get the period of the input signal
         pulseCount *= 4;
-        rotationPerSecond = 1000000UL / pulseCount;
-        rotationPerSecond += 1; // + 1 offset
+        rotationPerSecond = 1000000.0f / pulseCount;
+        // rotationPerSecond += 1; // + 1 offset
 
-        rotationPerMinute = rotationPerSecond * 60;
+        rotationPerMinute = rotationPerSecond * 60.0f;
         input_capt_count = 0;
         timer1_ovf_count = 0;
         updateLCD = 1;
