@@ -19,3 +19,12 @@ The frequency range is subdivied into 4 ranges:
 | 2 | 1KHz - 10KHz |
 | 3 | 10KHz - 40KHz |
 | 4 | 40KHz - 100KHz |
+
+## 3. FREQUENCY COUNTER
+The frequency counter mode as the name implies measures the frequency of the input signal with 99.8% accuracy. The error% is usually around 0.02% - 0.01%. The maximum error% that I recorded was 0.2%. I did not know the maximum measurable frequency since my test setup could only reach a maximum frequency of 100Khz.
+
+## 4. RPM
+This mode uses the timer1's input capture register to measure the period of the input signal and then computes the revolution per minute(RPM) and the revolution per second(RPS). The maximum measurable RPM is in the vicinity of 100,000 RPM(approx). Although I do not have the equipment to measure the actual maximum RPM.
+ ### Measuring RPM:
+ 1. To measure the RPM, an [IR proximity sensor](https://hackster.imgix.net/uploads/attachments/471152/obstacle-avoidance-tracking-infrared-sensor-module_S9CxCA7UqZ.jpg?auto=compress&w=900&h=675&fit=min&fm=jpg) is used.
+ 2. The RPM of the object to measured, a wheel in my case, is covered by a black tape with a white spot on it. The white spot is needed to reflect the IR light which in turn triggers the output of the IR sensor.
