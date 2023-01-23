@@ -41,4 +41,4 @@ This mode uses the timer1's input capture register to measure the period of the 
  2. The RPM of the object to measured, a wheel in my case, is covered by a black tape with a white spot on it. The white spot is needed to reflect the IR light which in turn triggers the output of the IR sensor.
  
  ### Note: 
- The output of the IR sensor must be pulled up to VCC using a pull up resistor of 4.7K or so because IR sensor has an open collector output ,i.e, the output can only be pulled LOW.
+ The output of the IR sensor must be pulled up to VCC using a pull up resistor of 4.7K or so. This is because the IR sensor has an open collector output ,i.e, the output can only be pulled LOW so a pull up resistor is needed to avoid a floating pin.
