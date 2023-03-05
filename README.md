@@ -1,5 +1,5 @@
 # TPFR_Meter
-![TPFR_Meter](/Images/Thumbnail_1.png)
+![TPFR_Meter](/Images/Thumbnail_1.jpg)
 
 This is an ATmega328p based Temperature, PWM generator, Frequency counter and RPM meter. 
 # BACK STORY
@@ -15,7 +15,7 @@ Well TPFR stands for Temperature(T), PWM(P), Frequency(F) and RPM(R) which is re
 The temperature measurement is done with the help of a ds18b20 waterproof temperature sensor with a max measurable temperature of 125 degree celsius and a minimum of -55 degree celsius.
 
 ## 2. PWM
-![PWM](/Images/PWM.png)
+![PWM](/Images/PWM.jpg)
 
 The PWM signals are generated using the timer1 of the 328p with a frequency range of 31Hz - 100KHz and a variable duty cycle from 0 - 100%.
 The frequency range is subdivied into 4 ranges:
@@ -28,12 +28,12 @@ The frequency range is subdivied into 4 ranges:
 | 4 | 40KHz - 100KHz |
 
 ## 3. FREQUENCY COUNTER
-![FREQUENCY_COUNTER](/Images/frequency_2.png)
+![FREQUENCY_COUNTER](/Images/frequency_2.jpg)
 
 The frequency counter mode as the name implies measures the frequency of the input signal with an accuracy of 99.8%. The error% is usually around 0.02% - 0.01%. The maximum error% that I recorded was 0.2%. I do not know the maximum measurable frequency since my test setup could only reach a maximum frequency of 100Khz.
 
 ## 4. RPM
-![RPM](/Images/RPM_2.png)
+![RPM](/Images/RPM_2.jpg)
 
 This mode uses the timer1's input capture register to measure the period of the input signal and then computes the revolution per minute(RPM) and the revolution per second(RPS). The maximum measurable RPM is in the vicinity of 100,000 RPM(approx). Unfortunately, I do not have the equipment to measure the actual maximum RPM.
 
