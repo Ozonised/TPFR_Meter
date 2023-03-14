@@ -77,4 +77,25 @@ To use the this device, we must be aware of the hardware as well as the software
  | 11 | Power switch |
  
  ## HOW TO USE:
-Connect a 9v battery and press the power button. On startup you will be greated with the homescreen/menupage
+- Connect a 9v battery and press the power button. 
+- On startup you will be greated with the homescreen/menupage. ![menupage](Images/menu.jpg) 
+- The cursor on the right points to the current selected the option. 
+- Use the ```UP``` and ```DOWN``` buttons to navigate through the menu.
+- Press the ```ENTER``` button to enter the menu or option.
+- Press the ```BACK``` button to exit from the current option.
+
+That's the basic on how to use the meter. However taking a look at an example will provide a broader picture.
+Let's take the example of the PWM mode:
+- Press the ```DOWN``` switch to point the arrow at the ```PWM``` mode.
+- Press ```ENTER``` to enter PWM mode.
+- Now, you will be greated with PWM frequency range menu. The PWM frequency range is subdivied into 4 ranges:
+
+   | Range | Frequency Range |
+   | :---: | :---: |
+   | 1 | 31Hz - 1KHz |
+   | 2 | 1KHz - 10KHz |
+   | 3 | 10KHz - 40KHz |
+   | 4 | 40KHz - 100KHz |
+   
+- Let's select the first range(31HZ - 1KHz) by pressing ```ENTER```.
+- Now you will be presented with 2 options and those are frequency(```Freq:```) and  duty cycle (```Duty%:```)
