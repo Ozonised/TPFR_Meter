@@ -109,4 +109,13 @@ Let's take the example of the PWM mode:
 - Now change the value by pressing the ```UP``` and ```DOWN``` buttons. The procedure is the same as shown above.
 - Press ```ENTER``` to save the value.
 ### Note: 
-The frequency and duty cycle change only upon pressing ```ENTER```.
+- The frequency and duty cycle change only upon pressing ```ENTER```.
+- The frequency increment step is not 1Hz for every range. It changes with the frequency range. The table below shows the shows the frequecny range and it's increament/decreament step value:
+
+| | Frequency Range | Step Value |
+| :---: | :---: | :---: |
+| 1 | 31Hz - 1KHz | 1Hz |
+| 2 | 1KHz - 10KHz | 10Hz |
+| 3 | 10KHz - 40KHz | 100Hz |
+| 4 | 40KHz - 100KHz | 1000Hz |
+
