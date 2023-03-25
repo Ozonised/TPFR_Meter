@@ -101,11 +101,11 @@ Let's take the example of the PWM mode:
 - Now you will be presented with 2 options and those are frequency(```Freq:```) and  duty cycle (```Duty%:```). By default the frequency is set to the lowest value in the given range(31Hz in this case) while the duty cycle is set to to 50.
 - To change the default value, the frequency value in this case, press ```ENTER```.
 - Now the cursor moves to the right hand side, this implies that you are in the value edit mode.
-- Press the ```UP``` or ```DOWN``` button to either increment or decreament the values in single steps or long press the respective to rapidly increase or decrease the value.
+- Press the ```UP``` or ```DOWN``` button to either increment or decreament the values in single steps or long press the respective button to rapidly increase or decrease the value.
 - Once you have set the desired value, press ```ENTER``` to save it and the cursor moves back to the left hand side.
 - The same steps are applicable for changing the duty cycle value.
 - First, press the ```DOWN``` button to select duty cycle.
-- Now press ```ENTER``` to select it and the cursor also moves to the right hand side.
+- Now press ```ENTER``` to select it and the cursor moves to the right hand side implying you are in the value edit mode.
 - Now change the value by pressing the ```UP``` and ```DOWN``` buttons. The procedure is the same as shown above.
 - Press ```ENTER``` to save the value.
 ### Note: 
