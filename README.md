@@ -56,7 +56,7 @@ This mode uses the timer1's input capture register to measure the period of the 
 To use the this device, we must be aware of the hardware as well as the software interface and that is what we will be covering in this section starting with the pinout.
 
 ## PINOUT
- Seeing all those switches and connector might seem intimidating at first but don't you worry as that is what I will breaking down   to you in this section.
+ Seeing all those switches and connector might seem intimidating at first but don't you worry as that is what I will breaking down in this section.
  
  ![pinout](Images/pinout.jpg)
  
@@ -100,13 +100,13 @@ Let's take the example of the PWM mode:
 - Let's select the first range(31HZ - 1KHz) by pressing ```ENTER```.
 - Now you will be presented with 2 options and those are frequency(```Freq:```) and  duty cycle (```Duty%:```). By default the frequency is set to the lowest value in the given range(31Hz in this case) while the duty cycle is set to to 50.
 - To change the default value, the frequency value in this case, press ```ENTER```.
-- Now the cursor moves to the right hand side, this implies that you are in the value edit mode.
-- Press the ```UP``` or ```DOWN``` button to either increment or decreament the values in single steps or long press the respective button to rapidly increase or decrease the value.
+- Now the cursor shifts to the right hand side, implying that you are in the value edit mode.
+- Press the ```UP``` or ```DOWN``` button to either increament or decreament the values in single steps or long press the respective button to rapidly increase or decrease the value.
 - Once you have set the desired value, press ```ENTER``` to save it and the cursor moves back to the left hand side.
 - The same steps are applicable for changing the duty cycle value.
 - First, press the ```DOWN``` button to select duty cycle.
 - Now press ```ENTER``` to select it and the cursor moves to the right hand side implying you are in the value edit mode.
-- Now change the value by pressing the ```UP``` and ```DOWN``` buttons. The procedure is the same as shown above.
+- Now change the value by either pressing the ```UP``` or ```DOWN``` button. The procedure is as the same as the one shown above for frequency.
 - Press ```ENTER``` to save the value.
 ### Note: 
 - The frequency and duty cycle change only upon pressing ```ENTER```.
