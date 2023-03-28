@@ -88,7 +88,7 @@ That's the basic on how to use the meter. However taking a look at an example wi
 Let's take the example of the PWM mode:
 - Press the ```DOWN``` switch to point the arrow at the ```PWM``` mode.
 - Press ```ENTER``` to enter PWM mode.
-- Now, you will be greated with PWM frequency range menu. The PWM frequency range is subdivied into 4 ranges:
+- Now, you will be greeted with the PWM frequency range menu. The PWM frequency range is subdivied into 4 ranges:
 
    | Range | Frequency Range |
    | :---: | :---: |
