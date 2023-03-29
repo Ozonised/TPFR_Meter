@@ -108,6 +108,10 @@ Let's take the example of the PWM mode:
 - Now press ```ENTER``` to select it and the cursor moves to the right hand side implying you are in the value edit mode.
 - Now change the value by either pressing the ```UP``` or ```DOWN``` button. The procedure is as the same as the one shown above for frequency.
 - Press ```ENTER``` to save the value.
+
+## DONE THAT IS IT!
+### This is all you need to know to get started using this meter.
+
 ### Note: 
 - The frequency and duty cycle change only upon pressing ```ENTER```.
 - The frequency increment step is not 1Hz for every range. It changes with the frequency range. The table below shows the shows the frequecny range and it's increament/decreament step value:
