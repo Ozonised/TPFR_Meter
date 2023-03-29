@@ -109,8 +109,8 @@ Let's take the example of the PWM mode:
 - Now change the value by either pressing the ```UP``` or ```DOWN``` button. The procedure is as the same as the one shown above for frequency.
 - Press ```ENTER``` to save the value.
 
-## DONE THAT IS IT!
-### This is all you need to know to get started using this meter.
+## DONE THIS IS IT! 
+This is all you need to know to get started using this meter.
 
 ### Note: 
 - The frequency and duty cycle change only upon pressing ```ENTER```.
