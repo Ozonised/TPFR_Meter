@@ -44,7 +44,7 @@ This mode uses the timer1's input capture register to measure the period of the 
  ### Note: 
  The output of the IR sensor must be pulled up to VCC using a pull up resistor of 4.7K or so. This is because the IR sensor has an open collector output ,i.e, the output can only be pulled LOW so a pull up resistor is needed to avoid a floating pin. Refer to the connection diagram below: ![connection of IR sensor](Images/IR_sensor_connection.jpg)
  
-# ELECTRICAL CHARACTERISTICS
+# ELECTRICAL CHARACTERISTICS:
  | Pin | Voltage |
  | :---: | :---: |
  | Input | 7.5V - 12V |
@@ -55,7 +55,7 @@ This mode uses the timer1's input capture register to measure the period of the 
 # USER INTERFACE: 
 To use the this device, we must be aware of the hardware as well as the software interface and that is what we will be covering in this section starting with the pinout.
 
-## PINOUT
+## PINOUT:
  Seeing all those switches and connector might seem intimidating at first but don't you worry as that is what I will breaking down in this section.
  
  ![pinout](Images/pinout.jpg)
