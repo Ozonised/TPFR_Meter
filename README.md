@@ -86,8 +86,8 @@ To use the this device, we must be aware of the hardware as well as the software
 
 That's the basic on how to use the meter. However taking a look at an example will provide a broader picture.
 Let's take the example of the PWM mode:
-- Press the ```DOWN``` switch to point the arrow at the ```PWM``` mode.
-- Press ```ENTER``` to enter PWM mode.
+- Press the ```DOWN``` switch to point the arrow at the ```PWM``` mode. ![PWM](Images/HTU/PWM.jpg)
+- Press ```ENTER``` to enter PWM mode. ![PWM_Range](Images/HTU/PWM_Range_Menu_2.jpg)
 - Now, you will be greeted with the PWM frequency range menu. The PWM frequency range is subdivied into 4 ranges:
 
    | Range | Frequency Range |
@@ -97,17 +97,19 @@ Let's take the example of the PWM mode:
    | 3 | 10KHz - 40KHz |
    | 4 | 40KHz - 100KHz |
    
-- Let's select the first range(31HZ - 1KHz) by pressing ```ENTER```.
+- Let's select the first range(31HZ - 1KHz) by pressing ```ENTER```. ![firstRange](Images/HTU/31Hz-1KHz.jpg)
 - Now you will be presented with 2 options and those are frequency(```Freq:```) and  duty cycle (```Duty%:```). By default the frequency is set to the lowest value in the given range(31Hz in this case) while the duty cycle is set to to 50.
-- To change the default value, the frequency value in this case, press ```ENTER```.
+- To change the default value, the frequency value in this case, press ```ENTER```. ![freq_edit](Images/HTU/selectedFrequency.jpg)
 - Now the cursor shifts to the right hand side, implying that you are in the value edit mode.
-- Press the ```UP``` or ```DOWN``` button to either increament or decreament the values in single steps or long press the respective button to rapidly increase or decrease the value.
-- Once you have set the desired value, press ```ENTER``` to save it and the cursor moves back to the left hand side.
+- Press the ```UP``` or ```DOWN``` button to either increament or decreament the values in single steps or long press the respective button to rapidly increase or decrease the value. ![changingFreq](Images/HTU/changingFrequency.jpg)
+- Once you have set the desired value, press ```ENTER``` to save it and the cursor moves back to the left hand side. ![savingFreq](Images/HTU/savedFrequency.jpg)
 - The same steps are applicable for changing the duty cycle value.
-- First, press the ```DOWN``` button to select duty cycle.
-- Now press ```ENTER``` to select it and the cursor moves to the right hand side implying you are in the value edit mode.
-- Now change the value by either pressing the ```UP``` or ```DOWN``` button. The procedure is as the same as the one shown above for frequency.
-- Press ```ENTER``` to save the value.
+- First, press the ```DOWN``` button to select duty cycle. ![dutyCycle](Images/HTU/dutyCycle.jpg)
+- Now press ```ENTER``` to select it and the cursor moves to the right hand side implying you are in the value edit mode. ![dutyCycleSelected](Images/HTU/selectedDutyCycle.jpg)
+- Now change the value by either pressing the ```UP``` or ```DOWN``` button. The procedure is as the same as the one shown above for frequency. ![changingDutyCycle](Images/HTU/changingDutyCycle.jpg)
+- Press ```ENTER``` to save the value. ![savedDutyCycle](Images/HTU/savedDutyCycle.jpg)
+- To exit from the PWM menu, press the ```BACK``` button. ![PWM_Range](Images/HTU/PWM_Range_Menu_2.jpg)
+- Press ```BACK``` again to get to the homescreen. ![PWM](Images/HTU/PWM.jpg)
 
 ## DONE THIS IS IT! 
 This is all you need to know to get started using this meter.
